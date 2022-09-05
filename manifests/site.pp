@@ -7,6 +7,10 @@ node default {
 }
 node 'master.puppet.vm' {
   include role::master_server
+  file {'/root/REAME'/:
+  ensure  => file,
+  content => $fqdn,
+  }
 }
 
 node /^web/ {
