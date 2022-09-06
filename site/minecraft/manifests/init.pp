@@ -2,7 +2,11 @@ class minecraft {
   file {'/opt/minecraft':
     ensure => directory,
   }
-file {'/opt/minecraft/server.jar':
+  file{'/opt/minecraft/jdk-17.0.4.1_linux-x64_bin.rpm':
+  ensure => file,
+  source => 'https://download.oracle.com/java/17/archive/jdk-17.0.4.1_linux-x64_bin.rpm',
+  }
+  file {'/opt/minecraft/server.jar':
   ensure => file,
   source => 'https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar',
   }
