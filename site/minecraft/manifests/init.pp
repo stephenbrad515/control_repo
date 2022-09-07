@@ -3,7 +3,7 @@ class minecraft (
   $install_dir = '/opt/minecraft',
   $rpm_url = 'https://download.oracle.com/java/17/archive/jdk-17.0.4.1_linux-x64_bin.rpm',
   ){
-  file {'/opt/minecraft':
+  file {$install_dir:
     ensure => directory,
   }
   file { "${install_dir}/server.jar":
